@@ -4,13 +4,27 @@ using UnityEngine;
 
 public class PreventPortalFlickering : MonoBehaviour
 {
-    public Transform player;
 
-    // Start is called before the first frame update
-    void Start()
+    MeshRenderer renderer;
+    public MeshRenderer renderer2;
+
+    private void Start()
     {
-        
+        renderer = GetComponent<MeshRenderer>();
     }
 
+    private void Update()
+    {
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            renderer.enabled = true;
+            renderer2.enabled = true;
+        }
+    }
 
 }

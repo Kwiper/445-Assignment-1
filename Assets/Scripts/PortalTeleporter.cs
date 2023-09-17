@@ -9,6 +9,9 @@ public class PortalTeleporter : MonoBehaviour {
 
     public Material skyboxMaterial;
 
+    public MeshRenderer renderer1;
+    public MeshRenderer renderer2;
+
     private bool playerIsOverlapping = false;
 
     // Update is called once per frame
@@ -27,6 +30,9 @@ public class PortalTeleporter : MonoBehaviour {
 
                 Vector3 positionOffset = Quaternion.Euler(0f, rotationDiff, 0f) * portalToPlayer;
                 player.position = reciever.position + positionOffset;
+
+                renderer1.enabled = false;
+                renderer2.enabled = false;
 
                 RenderSettings.skybox = skyboxMaterial;
 
