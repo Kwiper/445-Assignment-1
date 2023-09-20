@@ -43,6 +43,8 @@ public class PortalTeleporter : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Entered Portal");
+
         if (other.tag == "Player")
         {
             playerIsOverlapping = true;
